@@ -19,7 +19,10 @@ export const update = async (id: string | number, changes: PostDTO) =>
     .update(changes)
     .then(() => getByID(id));
 
-export const remove = async (id: string | number) =>
+export const remove = async (id: string | number) => {
+  const post = await getByID(id);
   await db<PostDTO>('posts')
     .where('id', id)
     .del();
+  return post;
+};
