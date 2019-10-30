@@ -4,7 +4,10 @@ import { Middleware } from './models';
 import { postRouter, userRouter } from './routes';
 
 export const server = express();
-export const logger: Middleware = () => (req, res, next) => {};
+export const logger: Middleware = () => (req, res, next) => {
+  console.log(`\n${new Date().toISOString()} ${req.method} ${req.url}\n`);
+  next();
+};
 
 server.use(logger());
 server.get('/', (req, res) => res.send(`<h2>Let's write some middleware!</h2>`));
