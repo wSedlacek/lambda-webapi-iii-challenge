@@ -1,4 +1,5 @@
 export interface PostDTO {
   id: string | number;
-  name: string;
+  user_id: string | number;
+  text: string;
 }
