@@ -2,32 +2,23 @@
   "name": "webapi-blog",
   "version": "1.0.0",
   "description": "Web API Blog Project",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "start": "ts-node-dev src/index.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LambdaSchool/Node-Blog.git"
-  },
-  "keywords": [
-    "node",
-    "express",
-    "blog",
-    "api"
-  ],
-  "author": "Lambda School",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/LambdaSchool/Node-Blog/issues"
-  },
-  "homepage": "https://github.com/LambdaSchool/Node-Blog#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "knex": "^0.18.3",
-    "sqlite3": "^4.0.9"
+    "knex": "^0.20.0",
+    "sqlite3": "^4.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.1",
+    "@types/node": "^12.11.7",
+    "@types/sqlite3": "^3.1.5",
+    "ts-node": "^8.4.1",
+    "ts-node-dev": "^1.0.0-pre.43",
+    "typescript": "^3.6.4"
   }
 }
