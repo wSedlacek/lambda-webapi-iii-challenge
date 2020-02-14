@@ -1,13 +1,15 @@
-exports.up = function(knex) {
+import Knex from 'knex';
+
+export const up = (knex: Knex) => {
   return knex.schema
-    .createTable('users', function(users) {
+    .createTable('users', (users) => {
       users.increments();
       users
         .string('name')
         .notNullable()
         .unique();
     })
-    .createTable('posts', function(posts) {
+    .createTable('posts', (posts) => {
       posts.increments();
       posts.text('text').notNullable();
 
@@ -22,6 +24,6 @@ exports.up = function(knex) {
     });
 };
 
-exports.down = function(knex) {
+export const down = (knex: Knex) => {
   return knex.schema.dropTableIfExists('posts').dropTableIfExists('users');
 };
